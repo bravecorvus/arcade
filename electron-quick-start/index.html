@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Arcade</title>
+  </head>
+  <body>
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+    <script>document.write(process.versions.node)</script>,
+    Chromium <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>.
+
+<img onclick="playSnake()" id="snake" src="../node-games/snake.gif">Snake Game</img>
+<img onclick="playTank()" id="tank" src="../node-games/tanks.gif">Tank Game</img>
+<img onclick="playSpaceship" id="spaceship" src="../node-games/spacecraft.gif">SpaceShip Game</img>
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+var snake = document.getElementById('snake');
+snake.addEventListener('click', function() {
+   playSnake();
+});
+var tank = document.getElementById('tank');
+tank.addEventListener('click', function() {
+   playTank();
+});
+var spaceship = document.getElementById('spaceship');
+spaceship.addEventListener('click', function() {
+  playSpaceship();
+});
+    </script>
+  </body>
+</html>
